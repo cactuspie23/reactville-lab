@@ -13,9 +13,9 @@ const App = () => {
       <Nav />
       <main>
         <Routes>
-          <Route to='/burgers' element={<BurgerShop />} />
+          <Route path='/' element={<Landing />} />
+          <Route path='/burgers' element={<BurgerShop />} />
         </Routes>
-        <Landing />
       </main>
     
     </>

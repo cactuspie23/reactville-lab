@@ -1,8 +1,20 @@
+import { ingredients } from "../../data/burger-data"
+import Ingredient from "./Ingredient"
 
 const BurgerStack = (props) => {
   return (
     <ul className="burger-stack">
-      Use the map function and the Ingredient component here
+      {props.stack.length ?  
+        <>
+        {props.stack.map(stack => 
+            <li>
+              {stack.name}
+            </li>
+          )}
+        </> 
+        : 
+        <div>No ingredients</div>
+      }
     </ul>
   )
 }
