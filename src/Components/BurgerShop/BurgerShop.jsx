@@ -6,7 +6,14 @@ import { useState } from 'react'
 
 const BurgerShop = () => {
   const [stack, setStack] = useState([])
-  console.log(ingredients)
+
+  const addToBurger = ingredient => {
+    setStack([ingredient, ...stack])
+  }
+
+  const removeFromBurger = idx => {
+    setStack(stack.filter((ingredient, i)=> i !== idx))
+  }
 
   return (
     <div className="burger-shop">
@@ -15,8 +22,8 @@ const BurgerShop = () => {
         <button>Clear Order</button>
       </nav>
       <section>
-        <IngredientList ingredients={ingredients} />
-        <BurgerStack stack={stack} />
+        <IngredientList ingredients={ingredients} stack={stack} addToBurger={addToBurger} />
+        <BurgerStack ingredients={stack} removeFromBurger={removeFromBurger} />
       </section>
     </div>
   )
