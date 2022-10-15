@@ -1,6 +1,7 @@
 // Components & Assets
 import Logo from '../../assets/react-logo.png'
 import { NavLink } from 'react-router-dom'
+import Clock from './Clock'
 
 const Nav = () => {
   return (
@@ -11,6 +12,7 @@ const Nav = () => {
       <NavLink to='/burgers'>
         BURGER SHOP
       </NavLink>
+      <Clock />
     </nav>
   )
 }
