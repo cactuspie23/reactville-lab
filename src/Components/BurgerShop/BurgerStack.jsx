@@ -1,4 +1,3 @@
-import { ingredients } from "../../data/burger-data"
 import Ingredient from "./Ingredient"
 
 const BurgerStack = (props) => {
