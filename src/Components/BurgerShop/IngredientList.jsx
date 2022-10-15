@@ -1,6 +1,13 @@
 import Ingredient from "./Ingredient"
+import { useState, useEffect } from "react"
 
 const IngredientList = (props) => {
+	const [hasBuns, setHasBuns] = useState(false)
+
+	useEffect(() => {
+		setHasBuns(props.stack.filter(el => el.type === 'bun').length === 2)
+	}, [props.stack])
+
 	return (
 		<ul>
 			{props.ingredients.map((ingredient, idx) => 
@@ -9,6 +16,7 @@ const IngredientList = (props) => {
 				isList={true}
 				ingredient={ingredient}
 				addToBurger={props.addToBurger}
+				disabled={hasBuns && ingredient.type === 'bun'}
 				/>
 			)}
 		</ul>

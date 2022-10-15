@@ -1,10 +1,10 @@
 
 const Ingredient = (props) => {
 	return (
-		<li style={{background: props.ingredient.color}}>
+		<li style={props.disabled ? {background: 'darkgrey'} : {background: props.ingredient.color}}>
 			{props.ingredient.name}
 			{props.isList
-				? <button onClick={()=> props.addToBurger(props.ingredient)}>+</button>
+				? <button disabled={props.disabled} onClick={()=> props.addToBurger(props.ingredient)}>+</button>
 				: <button onClick={()=> props.removeFromBurger(props.idx)}>X</button>
 			}
 		</li>
