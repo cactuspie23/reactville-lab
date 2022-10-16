@@ -3,6 +3,7 @@ import Logo from '../../assets/react-logo.png'
 import { NavLink } from 'react-router-dom'
 import Clock from './Clock'
 
+
 const Nav = (props) => {
   return (
     <nav className="navigation-bar">
@@ -11,6 +12,9 @@ const Nav = (props) => {
       </NavLink>
       <NavLink to='/burgers'>
         BURGER SHOP
+      </NavLink>
+      <NavLink to='/market'>
+        SUPER MARKET
       </NavLink>
       <Clock setDaytime={props.setDaytime} />
     </nav>

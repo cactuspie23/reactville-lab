@@ -13,7 +13,7 @@ const Clock = ({daytime, setDaytime}) => {
     } else {
       setDaytime(false)
     }
-  }, [setDaytime, currentTime])
+  }, [setDaytime, currentTime, daytime])
 
   return (
     <p className="display-items">
