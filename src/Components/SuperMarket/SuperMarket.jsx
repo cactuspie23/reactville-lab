@@ -15,11 +15,11 @@ const SuperMarket = () => {
   return (
     <div className="super-market">
       <section>
-        MarketNav component here
-        DisplayProducts component here
+        <MarketNav products={products} />
+        <DisplayProducts />
       </section>
 
-      Cart component here
+      <Cart />
 
     </div>
   )
