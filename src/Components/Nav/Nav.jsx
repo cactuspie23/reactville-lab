@@ -2,7 +2,7 @@
 import Logo from '../../assets/react-logo.png'
 import { NavLink } from 'react-router-dom'
 import Clock from './Clock'
-
+import Wallet from './Wallet'
 
 const Nav = (props) => {
   return (
@@ -16,7 +16,8 @@ const Nav = (props) => {
       <NavLink to='/market'>
         SUPER MARKET
       </NavLink>
-      <Clock setDaytime={props.setDaytime} />
+      <Wallet cash={props.cash} />
+      <Clock daytime={props.daytime} setDaytime={props.setDaytime} />
     </nav>
   )
 }
