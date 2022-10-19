@@ -45,7 +45,11 @@ const SuperMarket = () => {
         />
       </section>
 
-      <Cart cart={cart} removeFromCart={removeFromCart} />
+      <Cart 
+        cart={cart} 
+        removeFromCart={removeFromCart} 
+        setCart={setCart}
+      />
 
     </div>
   )
