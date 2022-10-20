@@ -1,8 +1,12 @@
 import CartItem from './CartItem'
+import { useState } from 'react'
 
 const Cart = (props) => {
+  const [message, setMessage] = useState('')
+
   const clearCart = () => {
     props.setCart([])
+    setMessage('')
   }
 
   const format = (num) => (Math.round(num * 100) / 100).toFixed(2)
@@ -14,13 +18,14 @@ const Cart = (props) => {
   }, 0))
 
   const handleCheckout = () => {
-    props.handleExchange(total)
-    clearCart()
+    const checkoutStatus = props.handleExchange(total)
+    checkoutStatus ? clearCart() : setMessage('Payment declined!')
   }
 
   return (
     <div className="cart">
       <h3>Cart</h3>
+      <p>{message}</p>
 
       {props.cart.map((item, idx) => 
         <CartItem key={idx} item={item} removeFromCart={props.removeFromCart} />
